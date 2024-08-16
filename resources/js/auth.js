@@ -134,6 +134,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function logoutUser() {
         const response = await postData('/api/logout', {});
+
+        localStorage.setItem('auth_token', "");
+        localStorage.setItem('user_name', "");
         handleResponse(response);
     }
 
